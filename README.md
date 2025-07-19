@@ -12,19 +12,21 @@
 #### 1.2 Cấu trúc của Makefile
 
 ```
-┌──────────────── Cấu trúc của một Rule trong Makefile ────────────────┐
-│                                                                      │
-│         Target            Dependencies                               │
-│           ┌┴┐    ┌────────────┴────────────┐                        │
-│  hellomake : hello.c main.c                 │                       │
-│         └─────┬─────────────────────────────┘                       │
-│               └── Tab                                               │
-│               ▼                                                     │
-│         gcc -o hellomake hello.c main.c                            │
-│         └────────────┬───────────────┘                             │
-│                    Action                                          │
-│                                                                      │
-└──────────────────────────────────────────────────────────────────────┘
++--- Cấu trúc của một Rule trong Makefile ---+
+
+TARGET (tên file đích)    DEPENDENCIES (file phụ thuộc)
+       |                         |
+       v                         v
+   hellomake : hello.c main.c
+             ^         |
+             |         |
+          dấu :     các file nguồn
+             
+[Tab] gcc -o hellomake hello.c main.c -l
+      |                               |
+      v                               v
+   Command                    Tham số biên dịch
+   (Action)
 ```
 
 Một rule trong Makefile bao gồm 4 phần chính:
