@@ -11,24 +11,42 @@
 
 #### 1.2 Cấu trúc của Makefile
 
-![Makefile Structure](https://i.imgur.com/QaGwWhs.png)
+```
+┌──────────────── Cấu trúc của một Rule trong Makefile ────────────────┐
+│                                                                      │
+│         Target            Dependencies                               │
+│           ┌┴┐    ┌────────────┴────────────┐                        │
+│  hellomake : hello.c main.c                 │                       │
+│         └─────┬─────────────────────────────┘                       │
+│               └── Tab                                               │
+│               ▼                                                     │
+│         gcc -o hellomake hello.c main.c                            │
+│         └────────────┬───────────────┘                             │
+│                    Action                                          │
+│                                                                      │
+└──────────────────────────────────────────────────────────────────────┘
+```
 
 Một rule trong Makefile bao gồm 4 phần chính:
-1. **Target** (màu đỏ): 
-   - Tên file cần tạo ra (ví dụ: hellomake)
-   - Hoặc tên hành động cần thực hiện
 
-2. **Dependencies** (màu xanh lá):
+1. **Target** 🎯:
+   - Tên file cần tạo ra (ví dụ: `hellomake`)
+   - Hoặc tên hành động cần thực hiện (ví dụ: `clean`, `all`)
+
+2. **Dependencies** 🔗:
    - Các file cần có để tạo ra target
-   - Trong ví dụ: hello.c và main.c
+   - Trong ví dụ: `hello.c` và `main.c`
+   - Nếu các file này thay đổi, target sẽ được build lại
 
-3. **Tab** (màu xanh dương):
+3. **Tab** ➡️:
    - Bắt buộc phải có dấu tab ở đầu dòng lệnh
    - Không thể thay thế bằng dấu cách
+   - Đây là quy tắc cú pháp bắt buộc của Makefile
 
-4. **Action** (màu tím):
+4. **Action** ⚡:
    - Lệnh thực thi để tạo ra target
    - Ví dụ: `gcc -o hellomake hello.c main.c`
+   - Có thể có nhiều lệnh, mỗi lệnh phải bắt đầu bằng tab
 
 Cú pháp tổng quát:
 ```makefile
