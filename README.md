@@ -21,10 +21,10 @@ hellomake: hello.c main.c             # Rule header
 |
 +-> Target (tên file đích)
 
-    gcc -o hellomake hello.c main.c   # Command line
+    gcc -o hellomake hello.c main.c   -I .# Command line
     ^   ^          ^                  # 
     |   |          |                  #
-    |   |          +-> Source files   # File nguồn
+    |   |          +-> Source files   # File nguồnFixed 
     |   |
     |   +-> Output flag              # Flag output
     |
