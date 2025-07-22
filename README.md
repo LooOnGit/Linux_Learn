@@ -1,44 +1,45 @@
-# 🐧 Linux Learning | Học Linux
+# 🐧 Linux Learning | Phát triển Linux nhúng
 
-## 📚 Introduction | Giới thiệu
-Linux là một hệ điều hành mã nguồn mở và miễn phí, được phát hành lần đầu bởi Linus Torvalds vào năm 1991. Ngày nay, Linux được sử dụng rộng rãi từ điện thoại thông minh đến siêu máy tính, trở thành một trong những phần mềm mã nguồn mở quan trọng nhất.
+## 🔧 Board Support Package (BSP)
+### Components | Thành phần
+- Bootloader: Bộ nạp khởi động
+  - U-Boot
+  - Boot sequence
+  - Boot parameters
 
-## 🎯 Learning Objectives | Mục tiêu học tập
-- Nắm vững các lệnh cơ bản trong Linux
-- Hiểu về cấu trúc hệ thống tập tin
-- Quản lý người dùng và phân quyền
-- Cài đặt và quản lý phần mềm
-- Cấu hình và bảo mật hệ thống
+- Linux kernel: Viết driver
+  - Device Drivers: I2C/SPI/UART/CAN/GPIO, ...
+  - Init hardware
+  - Resource management
+  - Device Tree
 
-## 🚀 Getting Started | Bắt đầu
-1. Chọn bản phân phối Linux phù hợp
-2. Cài đặt Linux
-3. Làm quen với Terminal
-4. Thực hành thường xuyên
+- Rootfs: Phát triển ứng dụng trên tầng usr space
+  - File system structure
+  - System services
+  - User applications
+  - Libraries & dependencies
 
-## 📝 Main Contents | Nội dung chính
-### 1. Cơ bản về Linux
-- Lịch sử phát triển
-- Các bản phân phối phổ biến
-- Cài đặt Linux
+- Toolchain: phát triển các ứng dụng trên tầng usr space
+  - Cross compiler
+  - Build system
+  - Libraries
+  - Debug tools
 
-### 2. Làm việc với Terminal
-- Các lệnh cơ bản
-- Quản lý tập tin và thư mục
-- Quyền và người dùng
+## 💻 Hardware Development | Phát triển phần cứng
+### Requirements | Yêu cầu
+- Làm một con bóng đèn đáp ứng chức năng bluetooth, zigbee v.v.. Chi phí
 
-### 3. Quản trị Hệ thống
-- Quản lý gói phần mềm
-- Quản lý dịch vụ
-- Bảo mật cơ bản
+### Implementation | Thực hiện
+B1: Tìm một cái thiết bị có sẵn trên thị trường đáp ứng được chức năng + chi phí mà bài toán ban đầu đưa ra.
+B2: Design lại phần cứng, loại bỏ các thành phần không cần thiết.
 
-## 🛠️ Practice Projects | Dự án thực hành
-1. Cài đặt và cấu hình máy chủ web
-2. Thiết lập môi trường phát triển
-3. Tự động hóa tác vụ với shell script
+## 🚀 Software Development | Phát triển phần mềm
+### B1.0: System Setup | Thiết lập hệ thống
+Bringup, Porting hệ điều hành lên cái phần cứng đã designed.
+- Tối ưu lại các thành phần phần mềm của hệ thống:
+  - u-boot
+  - kernel
+  - rootfs
 
-## 🤝 Contributing | Đóng góp
-Mọi đóng góp cho kho học liệu này đều được hoan nghênh. Bạn có thể tạo pull request hoặc mở issue để thảo luận.
-
-## 📜 License | Giấy phép
-Dự án này được phân phối dưới giấy phép MIT - Xem file [LICENSE](LICENSE) để
+### B1.1: Application Development | Phát triển ứng dụng
+- Viết app
